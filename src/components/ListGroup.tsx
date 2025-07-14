@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
 
 function ListGroup(){
     let items = [
@@ -8,9 +8,15 @@ function ListGroup(){
         'London',
         'Paris'
     ]
-
-    //event handler
-    const handleClick = (event: MouseEvent)=> console.log(event);
+    
+    /*
+    state is used for changes to componbents, when state of a component changes, react automatically re renders the component
+    Hooks allow you to "hook into" react components
+    giving useState a parameter of 01 will return an array with two things:
+    1. a current value of the state
+    2. a function to update that value
+    */
+    const [selectedIndex, setSelectedIndex] = useState(-1);
 
     //in return statements you can only use html or other react components unless inside brackets
     return (
@@ -25,9 +31,10 @@ function ListGroup(){
                 {items.map((item, index) => (
                     //when using the map function, we have to give every item a key, in this case we can just use the item itself since it's a string
                     <li 
-                        className = "list-group-item" 
+                        className = {selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
                         key={item} 
-                        onClick={handleClick}
+                        //when you click, this tells react to update selectedIndex to the index of the item you clicked
+                        onClick={() => {setSelectedIndex(index); }}
                     >
                      {item}
                     </li>
