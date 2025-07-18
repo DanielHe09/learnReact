@@ -4,10 +4,12 @@ import { useState } from "react";
 interface ListGroupProps {
     items: string[];
     heading: string;
+    //we want a function to notify App.tsx (the parent) when something in the list is clicked
+    onSelectItem: (item: string) => void;
 }
 
 //the bracket items in this case are used for "destructuring" the object ListGroupProps
-function ListGroup({items, heading}: ListGroupProps){
+function ListGroup({items, heading, onSelectItem}: ListGroupProps){
     
     
     /*
@@ -35,7 +37,10 @@ function ListGroup({items, heading}: ListGroupProps){
                         className = {selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
                         key={item} 
                         //when you click, this tells react to update selectedIndex to the index of the item you clicked
-                        onClick={() => {setSelectedIndex(index); }}
+                        onClick={() => {
+                            setSelectedIndex(index); 
+                            onSelectItem(item)
+                        }}
                     >
                      {item}
                     </li>
