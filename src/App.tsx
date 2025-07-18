@@ -1,3 +1,4 @@
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup"
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       When ListGroup calls this function, it actually runs the code defined in App, allowing the parent to respond to events in the child.
       */}
       <ListGroup items = {items} heading="Cities" onSelectItem={handleSelectItem}/>
+      <Alert/>
     </div>
   );
 }
