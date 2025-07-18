@@ -23,7 +23,11 @@ function App() {
       When ListGroup calls this function, it actually runs the code defined in App, allowing the parent to respond to events in the child.
       */}
       <ListGroup items = {items} heading="Cities" onSelectItem={handleSelectItem}/>
-      <Alert/>
+      {/*since we set the parameter string to be passed into Alert as a 'children' we can input the reactNode as a child
+      of the component */}
+      <Alert>
+        Hello <span>World</span>
+      </Alert>
     </div>
   );
 }
