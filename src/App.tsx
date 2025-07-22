@@ -1,5 +1,6 @@
 import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup"
+import PrimButton from "./components/PrimButton"
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Alert>
         Hello <span>World</span>
       </Alert>
+      <PrimButton/>
     </div>
   );
 }
