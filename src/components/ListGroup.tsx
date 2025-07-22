@@ -42,7 +42,7 @@ function ListGroup({items, heading, onSelectItem}: ListGroupProps){
                             onSelectItem(item)
                         }}
                     >
-                     {item}
+                     {item} 
                     </li>
                 ))}
             </ul>

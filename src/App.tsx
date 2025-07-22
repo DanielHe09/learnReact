@@ -29,7 +29,7 @@ function App() {
       <Alert>
         Hello <span>World</span>
       </Alert>
-      <PrimButton/>
+      <PrimButton onSelectItem={handleSelectItem}>hello</PrimButton>
     </div>
   );
 }
