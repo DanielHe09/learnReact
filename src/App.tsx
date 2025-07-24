@@ -1,6 +1,7 @@
 import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup"
 import PrimButton from "./components/PrimButton"
+import Alert2 from "./components/Alert2";
 
 function App() {
 
@@ -29,7 +30,8 @@ function App() {
       <Alert>
         Hello <span>World</span>
       </Alert>
-      <PrimButton onSelectItem={handleSelectItem}>hello</PrimButton>
+      <PrimButton onSelectItem={handleSelectItem}><span>hello!</span></PrimButton>
+      <Alert2/>
     </div>
   );
 }
